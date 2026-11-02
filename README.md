@@ -1,20 +1,63 @@
 # Automotive Dealer Sales Analysis Skill / 汽车经销商销售分析
 
-**Sales Analysis Lite** 帮助 AI 按汽车经销商销售方法做月度复盘：不只算同比、环比，还回答“销售走势是否延续、下降有没有放缓、哪些车型或区域减量最大”。
-
-**它是什么？**一套给支持技能的 AI 助手使用的分析说明文件。**它不是独立软件，不能双击运行，也不会自动连接销售系统。**第一次试用不需要写代码，但需要能读取文件并使用技能的 AI 客户端。
-
-An Agent Skill for automotive dealership sales analysis, car dealer performance, monthly sales reviews, YoY/MoM trend diagnosis, and model, dealer, regional, and market comparisons.
-
-版本：0.1.2 · [先试用假数据](#quick-start) · [准备自己的数据](#准备自己的数据) · [常见问题](#常见问题)
-
-## 先看它能给出什么
-
-以下全部是**虚构示例，不代表真实业务结果**：
-
-> **本月销售仍承压，但下滑有所放缓。**零售1,200辆，同比少售200辆，环比少售120辆。同比降幅从上月的17.5%收窄到14.3%，环比降幅从12.0%收窄到9.1%；说明销量仍在下降，但下降速度放缓，**不代表销量已经回升**。
-
-有车型明细时，还可以说明“车型A和C合计少售350辆，车型B多售150辆抵消部分减量，整体少售200辆”。没有相关数据，就不生成这项分析；减量构成也不等于下降原因。
+<!-- ===================== OPTION A: ENGLISH ===================== -->
+ 
+# Automotive Dealer Sales Review Skill
+ 
+> Turn a monthly sales spreadsheet into a plain-language answer to one question: **is our sales decline getting worse, or easing?**
+ 
+![From a simple monthly sales table to a plain-language verdict (fictional data)](assets/example-output.svg)
+ 
+*Fictional data, for illustration only.*
+ 
+## The 30-second version
+ 
+| | |
+|---|---|
+| **You give it** | A simple table: one row per month, with units sold. 13+ months works best; with less history it still analyzes what the data supports. |
+| **You get back** | A short verdict you can use in a monthly review: is the year-over-year and month-over-month decline accelerating or easing, backed by the key numbers. With model, dealer or regional detail, it also shows what pulls the total down and what offsets it. |
+| **You need** | An AI app that supports Agent Skills and can read files. The install guide below is written for VS Code + GitHub Copilot (Agent mode). No coding required. |
+| **It is not** | Standalone software. It can't be double-clicked and it doesn't connect to your sales system. |
+ 
+**[Try it on sample data (about 5 minutes) →](#quick-start)** · [Prepare your own data](#%E5%87%86%E5%A4%87%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE) · [FAQ](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+ 
+## Who is this for?
+ 
+- **Sales manager, preparing the monthly meeting.** "Is the decline slowing? Give me one headline and the numbers behind it."
+- **Dealer-group analyst, checking before writing the report.** Confirm whether the trend is easing or worsening, and see what the data can't support, before it goes into a deck.
+- **Regional or brand manager, looking for what drags the total down.** With model or regional detail, see which items account for the drop and which offset part of it. (This shows the make-up of the change, not its cause.)
+- **Someone new to dealer analytics, learning the method.** The skill follows one consistent method (comparable periods, trend judgement, reconciling the parts to the total) and says so when the data is not enough, instead of guessing.
+**Honest by design:** no model data means no model analysis. "The decline is easing" is never reported as "sales are recovering."
+ 
+<!-- ===================== OPTION B: 简体中文 ===================== -->
+ 
+# 汽车经销商销售复盘 Skill
+ 
+> 把月度销量表变成一句大白话结论:**销量下滑是在加重,还是在放缓?**
+ 
+![从简单的月度销量表到大白话结论(虚构数据)](assets/example-output.svg)
+ 
+*虚构数据,仅作示意。*
+ 
+## 30 秒看懂
+ 
+| | |
+|---|---|
+| **你提供** | 一张简单的销量表:每月一行,写明销量。最好有 13 个月以上;历史不足时,也会分析数据能支持的部分。 |
+| **你得到** | 一段可用于月度复盘的结论:同比、环比的下降是在加重还是放缓,并附关键数字。若有车型、门店或区域明细,还会说明哪些拉低了总量、哪些抵消了部分减量。 |
+| **你需要** | 支持 Agent Skills 且能读取文件的 AI 客户端。下方安装说明按 VS Code + GitHub Copilot(代理模式)编写。无需写代码。 |
+| **它不是** | 独立软件:不能双击运行,也不会自动连接你的销售系统。 |
+ 
+**[用虚构数据试跑(约 5 分钟)→](#quick-start)** · [准备自己的数据](#%E5%87%86%E5%A4%87%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE) · [常见问题](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+ 
+## 适合谁用?
+ 
+- **销售经理 · 准备月度会议。**“下滑放缓了吗?给我一句结论和支撑它的数字。”
+- **集团分析师 · 写报告前先核对。**先确认趋势是在放缓还是加重,并清楚数据不能支持什么,再写进报告。
+- **区域／品牌负责人 · 找出拉低总量的因素。**有车型或区域明细时,看哪些减量最大、哪些抵消了部分减量。(展示的是变化的构成,不等于下降的原因。)
+- **刚接触经销商分析的人 · 学习方法。**技能按固定方法分析(期间可比、趋势判断、分项与总量对账),数据不够时会明确说明,而不是猜测。
+**诚实为先:**没有车型数据,就不生成车型分析;“降幅收窄”不会被说成“销量回升”。
+ 
 
 ## Quick start
 
