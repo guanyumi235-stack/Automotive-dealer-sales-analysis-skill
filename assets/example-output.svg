@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" role="img" aria-labelledby="t d">
+  <title id="t">From a monthly sales table to a plain-language verdict</title>
+  <desc id="d">Left: a small table of fictional monthly retail units. Right: the verdict that sales are still falling but the decline is easing, not recovering.</desc>
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+    .label { font-size: 15px; fill: #57606a; font-weight: 600; letter-spacing: 0.3px; }
+    .cell { font-size: 17px; fill: #1f2328; }
+    .head { font-size: 14px; fill: #57606a; font-weight: 600; }
+    .big { font-size: 30px; fill: #1f2328; font-weight: 700; }
+    .line { font-size: 18px; fill: #1f2328; }
+    .muted { font-size: 14px; fill: #57606a; }
+    .warn { font-size: 17px; fill: #9a3412; font-weight: 600; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="959" height="439" rx="14" fill="#ffffff" stroke="#d0d7de"/>
+
+  <!-- Left card: input -->
+  <rect x="30" y="30" width="380" height="330" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="54" y="68" class="label">1 · YOUR DATA  你的数据</text>
+
+  <text x="54" y="112" class="head">Month</text>
+  <text x="250" y="112" class="head">Retail units</text>
+  <line x1="54" y1="124" x2="386" y2="124" stroke="#d0d7de"/>
+
+  <text x="54" y="158" class="cell">2026-08</text>
+  <text x="250" y="158" class="cell">1,500</text>
+  <text x="54" y="196" class="cell">2026-09</text>
+  <text x="250" y="196" class="cell">1,320</text>
+  <text x="54" y="234" class="cell">2026-10</text>
+  <text x="250" y="234" class="cell">1,200</text>
+
+  <text x="54" y="276" class="muted">… plus the same months of last year</text>
+  <text x="54" y="300" class="muted">(sample file: 15 months, one row each)</text>
+  <text x="54" y="336" class="muted">No coding. Just a simple spreadsheet.</text>
+
+  <!-- Arrow -->
+  <line x1="426" y1="195" x2="490" y2="195" stroke="#57606a" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="490,184 512,195 490,206" fill="#57606a"/>
+  <text x="469" y="172" class="muted" text-anchor="middle">Skill</text>
+
+  <!-- Right card: output -->
+  <rect x="530" y="30" width="400" height="330" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="554" y="68" class="label">2 · PLAIN-LANGUAGE RESULT  通俗结论</text>
+
+  <text x="554" y="120" class="big">Still falling,</text>
+  <text x="554" y="158" class="big">but easing.</text>
+
+  <text x="554" y="206" class="line">Year over year:  −14.3%</text>
+  <text x="554" y="230" class="muted">was −17.5% the month before</text>
+  <text x="554" y="266" class="line">Month over month:  −9.1%</text>
+  <text x="554" y="290" class="muted">was −12.0% the month before</text>
+
+  <rect x="554" y="308" width="352" height="34" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="570" y="331" class="warn">Not a recovery: sales are still down.</text>
+
+  <!-- Footer -->
+  <text x="480" y="396" class="muted" text-anchor="middle">销量仍在下降,但降幅收窄,不代表销量回升</text>
+  <text x="480" y="420" class="muted" text-anchor="middle">Fictional data, for illustration only. 虚构数据,仅作示意。</text>
+</svg>
