@@ -1,5 +1,5 @@
 ---
-name: sales-analysis-lite
+name: automotive-dealer-sales-analysis
 description: 'Analyze automotive dealership sales and dealer retail performance. Use for monthly sales reviews, YoY/MoM comparisons, sales trend diagnosis, model or vehicle performance, dealer/store or regional breakdowns, and market comparisons. Trigger phrases: 汽车经销商销售分析, 分析本月销售, 月度销售复盘, 同比环比, sales analysis lite, car dealer sales analysis, automotive retail performance, monthly sales report. Produces evidence-based conclusions on sales direction and pace.'
 argument-hint: '月份或日期区间、地域、产品范围；可附指标定义、数据文件或只读数据源。'
 license: CC-BY-4.0
@@ -9,7 +9,7 @@ user-invocable: true
 disable-model-invocation: false
 ---
 
-# Sales Analysis Lite / 销售分析 Lite
+# automotive-dealer-sales-analysis / 销售分析 Lite
 
 按“历史比、横向比、外部比”分析销售。先回答本月，再解释延续或变化；证据不足时说明缺口，不编造结果。
 
