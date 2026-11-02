@@ -1,6 +1,6 @@
 ---
 name: automotive-dealer-sales-analysis
-description: 'Analyze automotive dealership sales and dealer retail performance. Use for monthly sales reviews, YoY/MoM comparisons, sales trend diagnosis, model or vehicle performance, dealer/store or regional breakdowns, and market comparisons. Trigger phrases: 汽车经销商销售分析, 分析本月销售, 月度销售复盘, 同比环比, sales analysis lite, car dealer sales analysis, automotive retail performance, monthly sales report. Produces evidence-based conclusions on sales direction and pace.'
+description: 'Review monthly sales of a car dealership or dealer group (4S店 / 经销商 / 经销商集团) from a sales table: tell whether the year-over-year (同比) and month-over-month (环比) decline or growth is accelerating or easing, and, when model/store/region detail exists, what drives the change. Use when the user asks things like "这个月销量怎么样", "销量下滑是在加重还是放缓", "月度销售复盘", "同比环比分析", "哪些车型/门店/区域拉低了销量", "is our sales decline easing", or provides a monthly retail / delivery / invoice / registration (零售/交付/开票/上牌) sales file. By default not for forecasting, inventory, finance or lead-to-order conversion analysis.'
 argument-hint: '月份或日期区间、地域、产品范围；可附指标定义、数据文件或只读数据源。'
 license: CC-BY-4.0
 metadata:
